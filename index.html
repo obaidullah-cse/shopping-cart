@@ -98,7 +98,6 @@
       const TotalPrice = totalprice();
    })
 
-
    //plus mobile-case
       const casePlusBtn = document.getElementById("plus-case");
       casePlusBtn.addEventListener("click",function(){  
@@ -115,8 +114,8 @@
          const TotalCaseOfAmount = caseTotalMinus*59;
          document.getElementById("currentCaseValue").innerText = TotalCaseOfAmount;
          const TotalPrice = totalprice();
-      })
-
+      })  
+ 
    function totalprice(){
       const mobilePrice = document.getElementById("priceOfMobile").innerText;
       const mobilePriceNmuber =parseFloat(mobilePrice);
@@ -136,6 +135,12 @@
    function getMinusCase(id){
       const currentNumber = getCurrentNumber(id);
       const totalMinus = currentNumber-1;
+      if(totalMinus >= 0){
+         console.log(totalMinus);
+      }
+      else{
+         return 0;
+      }
       document.getElementById(id).value = totalMinus;
       return totalMinus;
    }
